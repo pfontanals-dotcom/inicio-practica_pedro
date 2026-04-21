@@ -1,4 +1,4 @@
 nombre: pedro
 apellido: fontanals
 legajo: 123456
-materia favoritaque te importa
+materia favorita: que te importa

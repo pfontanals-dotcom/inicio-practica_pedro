@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "ingrese un numero natural"
+read n
+echo "ingrese su nombre"
+read nombre
+contador=0
+while [ $contador -le $n ]
+do
+contador=$((contador + 1))
+echo $nombre > carpeta$contador
+done

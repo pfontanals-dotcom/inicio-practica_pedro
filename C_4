@@ -1,0 +1,30 @@
+#include <stdio.h>
+ej 3
+int factorial_n(int n){
+int resultado=0;
+int i;
+
+if(n<0)
+    resultado=0;
+if (n>=0){
+ if(n==0){
+     resultado=0;
+ }
+ else{
+     for(i=1; 1<=n; i++){
+         resultado=resultado*i;
+     }
+ }
+ 
+
+
+
+    return resultado;
+} 
+}
+int main() {
+
+    printf("factorial_n=4: %d", factorial_n(4));
+
+    return 0;
+}

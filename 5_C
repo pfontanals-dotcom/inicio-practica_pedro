@@ -1,0 +1,17 @@
+// Escribir una función que dados 2 números, calcule el porcentaje que el primero representa respecto del segundo.
+#include <stdio.h>
+
+int caluclar_porcentaje(int valor_1, int valor_2){
+    int auxiliar=100*valor_1;
+    int resultado=auxiliar/valor_2;
+    return resultado;
+    
+    
+}
+
+int main() {
+
+    printf("100, es el %d porciento de 10", caluclar_porcentaje(100,10));
+
+    return 0;
+}

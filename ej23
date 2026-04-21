@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "ingrese un numero natural"
+read n
+contador=0
+while [ $contador -le $n ]
+do
+contador=$((contador + 1))
+mkdir carpeta$contador
+done
