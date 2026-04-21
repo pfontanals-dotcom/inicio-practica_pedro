@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "ingrese el nombre del alumno: "
+read nombre
+echo "ingrese el apellido del alumno: "
+read apellido
+echo "ingrese el legajo del alumno: "
+read legajo 
+echo "cual es la materia preferida del alumno?: "
+read materia
+
+echo "nombre: $nombre" > datos_alumno.txt
+echo "apellido: $apellido" >> datos_alumno.txt
+echo "legajo: $legajo" >> datos_alumno.txt
+echo "materia favorita: $materia" >> datos_alumno.txt
+cat  datos_alumno.txt
+
