@@ -1,0 +1,41 @@
+#include <stdio.h> 
+#include <stdbool.h>
+
+int es_multiplo(int a, int b){
+    return (a % b == 0); }
+
+int main() { 
+    int numero;
+    int mult_2 = 0;
+    int mult_3 = 0;
+    int mult_5 = 0;
+    int mult_7 = 0;
+    
+    printf("ingrese un numero:\n ");
+    scanf("%i", &numero);
+    
+    while(numero != 0){
+        
+        if(es_multiplo(numero, 2)){
+            mult_2++;
+        }
+       if(es_multiplo(numero, 3)){
+            mult_3++;
+        }
+
+        if(es_multiplo(numero, 5)){
+            mult_5++;
+        }
+        
+        if(es_multiplo(numero, 7)){
+            mult_7++;
+        }
+    printf("ingrese otro numero:\n ");
+    scanf("%i", &numero);
+    }
+   printf("Multiplos de 2: %i, de 3: %i, de 5: %i, de 7: %i\n",
+           mult_2, mult_3, mult_5, mult_7);
+    
+
+    return 0;
+}
