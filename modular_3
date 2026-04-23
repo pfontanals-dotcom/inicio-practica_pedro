@@ -1,0 +1,55 @@
+#include <stdio.h>
+void obtener_fecha_b(int fecha, int *dia, int *mes, int*anio){
+    
+    *dia = fecha % 100;
+    fecha = fecha / 100;
+    
+    *mes = fecha % 100;
+    fecha = fecha / 100;
+    
+    *anio = fecha;
+}
+int main(){
+    int fecha_1;
+    int dia_1, mes_1, anio_1;
+    int fecha_2;
+    int dia_2, mes_2, anio_2;
+    
+    printf("ingres una fecha en formato ddmmaa:\n");
+    scanf("%i", &fecha_1);
+    printf("ingrese otra fecha:\n");
+    scanf("%i", &fecha_2);
+    
+    obtener_fecha_b(fecha_1,&dia_1, &mes_1, &anio_1);
+    obtener_fecha_b(fecha_2,&dia_2, &mes_2, &anio_2);
+    
+    if(anio_1<anio_2){
+        printf("la primer fecha es anterior\n");
+    }
+    else if(anio_2<anio_1){
+        printf("la segunda fecha es anterior\n");
+    }
+    else{
+        if(mes_1<mes_2){
+            printf("la primer fecha es anterior\n");
+        }
+        else if(mes_2<mes_1){
+        printf("la segunda fecha es anterior\n");
+    }
+     else{
+         if(dia_1<dia_2){
+             printf("la primer fecha es anterior\n");
+         }
+         else if(dia_2<dia_1){
+             printf("la segunda fecha es anterior\n");
+         }
+      else{
+          printf("las fechas son iguales\n");
+      }
+     }
+    }
+    printf("dia 1=%d, mes 1=%d, anio 1=%d\n", dia_1, mes_1, anio_1);
+    printf("dia 2=%d, mes 2=%d, anio 2=%d\n", dia_2, mes_2, anio_2);
+    return 0;
+}
+    
