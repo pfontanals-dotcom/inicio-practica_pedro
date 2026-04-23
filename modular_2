@@ -1,0 +1,28 @@
+#include <stdio.h>
+int obtener_factorial(int n){
+    int factorial=1;
+    int contador;
+       
+        for(contador=1; contador<=n; contador++){
+            factorial=factorial*contador;
+        }
+       
+        return factorial;
+    
+}
+int main(){
+    int numero;
+    
+    printf("ingres eun numero:\n");
+    scanf("%i", &numero);
+    
+        while (numero < 0){
+        printf("El numero es incorrecto, ingrese otro numero:\n");
+        scanf("%i", &numero);
+    }
+    
+    for (int i=1;i<=numero;i++){
+        printf("el factorial de %d es: %d\n",i,obtener_factorial(i));
+    }
+    return 0;
+}
