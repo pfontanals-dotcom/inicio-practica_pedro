@@ -1,0 +1,38 @@
+#include <stdio.h>
+ int es_primo(int n){
+    int es_primo = 1;
+    if (n <= 1){
+        es_primo = 0;
+    } 
+    else{
+        for (int i = 2; i <= n / 2; i++){
+            if (n % i == 0){
+                es_primo = 0;
+            }
+        }
+    }
+
+    return es_primo;
+}
+
+
+
+int main() {
+    int numero;
+    int contador=0;
+    int suma=0;
+    
+    printf("ingrese un numero(0 para terminar):\n");
+    scanf("%d", &numero);
+    
+    while(numero!=0){
+        if(es_primo(numero)==1){
+            contador++;
+            suma=suma+numero;
+        }
+        printf("ingrese otro numero:\n");
+        scanf("%d", &numero);
+    }
+    printf("cantidad de primos: %d\n suma de los primos: %d\n",contador, suma);
+    return 0;
+}
