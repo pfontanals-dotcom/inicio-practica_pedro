@@ -1,7 +1,7 @@
 #include <stdio.h>
 int es_primo(int n){
     int es_primo = 1;
-    if (n <= 1){
+    if (n < 1){
         es_primo = 0;
     }
     else{
@@ -31,6 +31,7 @@ int main() {
  
  while(numero!=0 && contador<n){
        if(es_primo(numero)==1){
+           printf("%d es primo\n", numero);
           contador++;
           suma=suma+numero;
  }
@@ -38,8 +39,6 @@ int main() {
   printf("ingrese otro numero:\n");
         scanf("%d", &numero);
     }
-    printf("\nSe encontraron %d primos (de %d pedidos)\n", contador, n);
-printf("Suma de los primos: %d\n", suma);
+printf("La sumatoria de los números primos ingresados es %d\n", suma);
     return 0;
 }
-  
