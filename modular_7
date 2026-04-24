@@ -1,0 +1,27 @@
+#include <stdio.h>
+int max_com_div(int a, int b) {
+    int resto;
+
+    while (b != 0) {
+        resto = a % b;
+        a = b;
+        b = resto;
+    }
+
+    return a;
+}
+
+
+  int main(){
+      int n_1;
+      int n_2;
+      
+      printf("ingrese un numero:\n");
+      scanf("%d", &n_1);
+      printf("ingrese otro numero:\n");
+      scanf("%d", &n_2);
+      
+      printf("el maximo comun divisor entre %d y %d es: %d",n_1 ,n_2, max_com_div(n_1,n_2));
+      return 0;
+      
+  }
