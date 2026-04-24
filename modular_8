@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int capicua(int n){
+    int original = n;
+    int invertido = 0;
+
+    while(n > 0){
+        invertido = invertido * 10 + (n % 10);
+        n = n / 10;
+    }
+
+    if(invertido == original){
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+
+
+
+
+int main() {
+    int numero;
+    printf("ingrese un numero (0 para terminar):\n");
+    scanf("%d", &numero);
+    
+    while(numero<0){
+        printf("Número Inválido, ingrese de nuevo:\n");
+        scanf("%d", &numero);
+        
+    }
+    while(numero>0){
+        if(capicua(numero)==1){
+            printf("%d es capicua\n", numero);
+        }
+        else{
+             printf("%d no es capicua\n", numero);
+        }
+        printf("ingrese otro numero:\n");
+        scanf("%d", &numero);
+    }
+    
+    return 0;
+}
