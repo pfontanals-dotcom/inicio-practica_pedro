@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+double aprox_pi_wallis(int x){
+    
+    int i;
+    double producto=1.0;
+    
+    if(x>=1){
+            for(i = 1; i <= x; i++){
+        producto = producto * ( (2.0 * i) / (2.0 * i - 1) );
+        producto = producto * ( (2.0 * i) / (2.0 * i + 1) );
+    }
+
+    return 2 * producto;
+    }
+}
+    
+
+
+int main() {
+    int p=100;
+  printf("aporximacion de pi con producto de wallis n=%i: %f",p,aprox_pi_wallis(p));
+    return 0;
+}
