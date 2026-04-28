@@ -1,0 +1,31 @@
+// Escribir una función que reciba un mes y un año como números enteros; y devuelva la cantidad de días del mes, considerando los años bisiestos. Tenga en cuenta que un año bisiesto es aquel divisible por 4, salvo que sea divisible por 100, en cuyo caso también debe ser divisible por 400.
+#include <stdio.h>
+int cant_dias(int mes, int anio){
+    
+    int dias=0;
+   
+    
+    if(mes==1||mes==3|| mes==5||mes==7||mes==8||mes==10||mes==12){
+        dias+=31;
+    }
+    if(mes==4 || mes==6 || mes==9 || mes==11){
+        dias+=30;
+    }
+    if(mes==2){
+        if((anio%4==0 && anio%100!=0)||(anio%400==0)){
+            dias+=29;
+        }
+         else{
+        dias+=28;
+    }
+    }
+   
+    return dias;
+}
+int main() {
+   printf("en el mes 2 del anio 2024 hubieron %i dias\n", cant_dias(2, 2024));
+printf("en el mes 2 del anio 2023 hubieron %i dias\n", cant_dias(2, 2023));
+printf("en el mes 1 del anio 2023 hubieron %i dias\n", cant_dias(1, 2023));
+printf("en el mes 4 del anio 2023 hubieron %i dias\n", cant_dias(4, 2023));
+    return 0;
+}
