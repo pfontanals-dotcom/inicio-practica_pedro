@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+double calc_potencia(int a, int b){
+ int i;
+ double resultado=1.0;
+
+ if (b > 0) {
+        for (i = 0; i < b; i++) {
+            resultado = resultado * a;
+        }
+    }
+    else if (b < 0) {
+        for (i = 0; i < -b; i++) {
+            resultado = resultado * a;
+        }
+        resultado = 1.0 / resultado;
+    }
+
+
+return resultado;
+}
+int main() {
+    printf("2^3 = %.2f\n", calc_potencia(2, 3));
+    printf("2^-2 = %.2f\n", calc_potencia(2, -2));
+    printf("5^0 = %.2f\n", calc_potencia(5, 0));
+
+    return 0;
+}
