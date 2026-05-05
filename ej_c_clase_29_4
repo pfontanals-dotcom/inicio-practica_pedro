@@ -1,0 +1,50 @@
+#include <stdio.h>
+#define MAX 1000
+typedef int Tvec[MAX];
+
+void InicializarVector(Tvec vec, int tamanio){
+    int i;
+    for(i = 0; i < tamanio; i++){
+        vec[i] = 0;
+    }
+}
+
+void ContarNumero(Tvec vec, int num){
+    vec[num]++; 
+}
+
+void MostrarVectorConNumeros(Tvec vec, int tamanio){
+    int i;
+    printf("\nFrecuencia de números ingresados:\n");
+    for(i = 0; i < tamanio; i++){
+        if(vec[i] > 0){ 
+            printf("Número %d aparece %d veces\n", i, vec[i]);
+        }
+    }
+}
+
+int main(void){
+    int num;
+    Tvec vec;
+    int tamanio = MAX;
+
+    InicializarVector(vec, tamanio);
+
+    printf("Ingresar número (0-999, negativo para finalizar): ");
+    scanf("%d", &num);
+
+    while(num >= 0){
+        if(num >= 0 && num < 1000){
+            ContarNumero(vec, num);
+        } else {
+            printf("Número fuera de rango, ignorado.\n");
+        }
+
+        printf("Ingresar número (0-999, negativo para finalizar): ");
+        scanf("%d", &num);
+    }
+
+    MostrarVectorConNumeros(vec, tamanio);
+
+    return 0;
+}

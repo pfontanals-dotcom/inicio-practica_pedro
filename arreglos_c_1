@@ -1,0 +1,21 @@
+//Dado un número n entero positivo y un listado de n números reales, almacenar los números en un vector según el orden de entrada. Informar el contenido del vector indicando la posición ocupada por cada número a partir de la primera posición. (1 <= n <= 100)
+#include <stdio.h>
+
+int main() {
+    int i;
+    int n;
+    printf("ingrese un numero:\n");
+    scanf("%d",&n);
+    
+    if((n <= 100) && (1 <= n)){
+        float v[n];
+        for(i=0;i<n;i++){
+            printf("ingrese un numero para agregar al vector:\n");
+            scanf("%f", &v[i]);
+        }
+        for(i=0;i<n;i++){
+            printf("el elemento de la posicion %d es: %.2f\n", i, v[i]);
+        }
+    }
+    return 0;
+}
