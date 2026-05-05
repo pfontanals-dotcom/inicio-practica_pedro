@@ -5,7 +5,7 @@ typedef double Tvec[MAX];
 
 int main() {
    Tvec v;
-   int i,p;
+   int i;
    int contador=0;
    double numero;
    printf("ingrese un numero difernte de 0:\n");
