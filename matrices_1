@@ -1,0 +1,36 @@
+// Dada una matriz de 3x4, escribir un programa que permita cargar sus datos y luego mostrarlos.
+#include <stdio.h>
+#define MAX_FILA 3
+#define MAX_COLUMNA 4
+typedef float tm_reales[MAX_FILA][MAX_COLUMNA];
+
+void cargar_datos(tm_reales m){
+    int i, j;
+    for(i=0;i<MAX_FILA;i++){
+        for(j=0;j<MAX_COLUMNA;j++){
+        printf("ingrese el valor del numero (posicion fila %i, columna %i )\n", i, j);
+        scanf("%f", &m[i][j]);
+        }
+    }
+    return;
+}
+void mostrar_datos(tm_reales m){
+    int i, j;
+    for(i=0;i<MAX_FILA;i++){
+        for(j=0;j<MAX_COLUMNA;j++){
+        printf("la componente (%i,%i) de la matriz es: %.2f\n", i, j, m[i][j]);
+        }
+    }
+    return;
+}
+int main() {
+    tm_reales matriz;
+    
+    cargar_datos(matriz);
+    
+    printf("\nContenido de la matriz:\n\n");
+    
+     mostrar_datos(matriz);
+
+    return 0;
+}
