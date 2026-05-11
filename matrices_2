@@ -1,0 +1,104 @@
+#include <stdio.h>
+#include <stdbool.h>
+#define MAX_matriz 5
+typedef int tm_enteros[MAX_matriz][MAX_matriz];
+
+
+void mostrar_datos(tm_enteros m){
+    int i, j;
+    for(i=0;i<MAX_matriz;i++){
+        for(j=0;j<MAX_matriz;j++){
+        printf("la componente (%i,%i) de la matriz es: %i\n", i, j, m[i][j]);
+        }
+    }
+    return;
+}
+void calcular_suma(tm_enteros m, int *s){
+    int i, j;
+    int suma=0;
+    for(i=0;i<MAX_matriz;i++){
+        for(j=0;j<MAX_matriz;j++){
+            suma+=m[i][j];
+        }
+    }
+        *s=suma;
+}
+void calcular_diagonal_p(tm_enteros m, int *s){
+    int i;
+    int suma=0;
+    for (i=0; i<MAX_matriz; i++){
+        suma+=m[i][i];
+    }
+    *s=suma;
+}
+void calcular_diagonal_s(tm_enteros m, int *s){
+    int i;
+    int suma=0;
+    for (i=0; i<MAX_matriz; i++){
+            suma+=m[i][MAX_matriz-1-i];
+    }
+    *s=suma;
+}
+
+void calcular_superior(tm_enteros m, int *s){
+    int i,j;
+    int suma=0;
+    for (i=0; i<MAX_matriz; i++){
+        {
+        for(j=0;j<MAX_matriz;j++){
+        if (j>i){
+        suma+=m[i][j];
+                }
+            }
+        }
+           
+    }
+    *s=suma;
+}
+void calcular_inferior(tm_enteros m, int *s){
+    int i,j;
+    int suma=0;
+    for (i=0; i<MAX_matriz; i++){
+        {
+        for(j=0;j<MAX_matriz;j++){
+        if (i>j){
+        suma+=m[i][j];
+                }
+            }
+        }
+           
+    }
+    *s=suma;
+}
+int main() {
+  int m_enteros[5][5] = {
+    {1, 0, 0, 0, 0},
+    {0, 2, 0, 0, 0},
+    {0, 0, 3, 0, 0},
+    {0, 0, 0, 4, 0},
+    {0, 0, 0, 0, 5}
+};
+
+ int suma_total;
+ int suma_principal;
+ int suma_secundaria;
+ int suma_superior;
+ int suma_inferior;
+   
+   calcular_suma(m_enteros, &suma_total);
+   calcular_diagonal_p(m_enteros, &suma_principal);
+   calcular_diagonal_s(m_enteros,&suma_secundaria);
+   calcular_superior(m_enteros, &suma_superior);
+   calcular_inferior(m_enteros, &suma_inferior);
+   
+   if(suma_superior==0 && suma_inferior==0)
+   {
+       printf("la matriz es diagonal\n");
+   }
+printf("Suma diagonal principal: %d\n", suma_principal);
+    printf("Suma diagonal secundaria: %d\n", suma_secundaria);
+
+    printf("Suma triangulo superior: %d\n", suma_superior);
+    printf("Suma triangulo inferior: %d\n", suma_inferior);
+    return 0;
+}
